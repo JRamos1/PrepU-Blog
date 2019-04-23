@@ -25,6 +25,7 @@ module.exports =function(sequelize, Datatypes){
                 isEmail: {
                     msg: "Must enter a valid Email address!"
                 }
+                
             },
             unique: {
                 args: true,
