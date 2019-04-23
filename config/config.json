@@ -2,8 +2,8 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "database_development",
-    "port": 3306,
+    "database": "projectdb",
+    "port": 8889,
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -14,11 +14,10 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
+
+  
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
