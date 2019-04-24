@@ -1,5 +1,5 @@
 module.exports =function(sequelize, Datatypes){
-    let Alumni = sequelize.define("Alumni", {
+    let Mentor = sequelize.define("Mentor", {
         firstName:{
             type: Datatypes.STRING,
             allowNull: false,
@@ -53,5 +53,5 @@ module.exports =function(sequelize, Datatypes){
                 }
             }
 });
-return Alumni
+return Mentor
 };

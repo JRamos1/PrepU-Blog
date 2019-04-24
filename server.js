@@ -7,7 +7,9 @@ const PORT = process.env.PORT || 8080
 
 const db = require("./models")
 
+const parser = require("body-parser")
 
+app.use(parser.json())
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
