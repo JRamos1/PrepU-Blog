@@ -38,21 +38,22 @@ module.exports = function(sequelize, Datatypes){
                 len: [6-20]
             }
         },
-        major:{
-            type: Datatypes.STRING,
-            allowNull : false,
-            validate:{
-                len: [6-50]
-            }
-        },
+       
 
         career:{
             type: Datatypes.STRING,
             allowNull: false,
             validate:{
-                len: [6-50]
+                len: [1-50]
             }
-        }
+        },
+        major:{
+            type: Datatypes.STRING,
+            allowNull : false,
+            validate:{
+                len: [1-50]
+            }
+        },
 
 
     });
