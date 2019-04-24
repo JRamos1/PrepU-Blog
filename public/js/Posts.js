@@ -24,7 +24,7 @@ $(document).ready(function(){
         }
       
         // Getting jQuery references to the post body, title, form, and category select
-        let regForm = $("#cms")
+        let regForm = $("#studentRegister")
         
         // Giving the postCategorySelect a default value
         
