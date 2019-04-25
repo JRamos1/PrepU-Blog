@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
+  if (localStorage.getItem('currUser')) {
+    console.log('Logged in user: ', JSON.parse(localStorage.getItem('currUser')))
+  } else {
+    console.log('Nobody logged in!')
+  }
+
     let url = window.location.search;
 
     let userID;
@@ -37,6 +43,8 @@ $(document).ready(function(){
            let studentPassword = $("#password").val().trim()
            let studentMajor = $("#major").val().trim()
            let studentCareer = $("#career").val().trim()
+           console.log("hi", studentCareer)
+           
         
         
           // Wont submit the post if we are missing a body or a title
@@ -64,14 +72,15 @@ $(document).ready(function(){
       
         // Submits a new post and brings user to blog page upon completion
         function submitStudentData(Student) {
-          $.post("/api/Students/", Student, function() {
+          $.post("/api/Students/", Student, function(currUser) {
+            localStorage.setItem('currUser', JSON.stringify(currUser))
             window.location.href = "/";
           });
         }
       
         // Gets post data for a post if we're editing
       
-         let mentorReg = $("#mentorForm")
+         let mentorReg = $("#mentorRegister")
 
          $(mentorReg).on("submit", function formValidate(event){
            event.preventDefault();
@@ -108,3 +117,8 @@ $(document).ready(function(){
        }    
       })
     })
+
+
+
+  //localstorage.getItem("currUser")
+  //
