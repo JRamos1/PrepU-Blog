@@ -74,7 +74,7 @@ $(document).ready(function(){
         function submitStudentData(Student) {
           $.post("/api/Students/", Student, function(currUser) {
             localStorage.setItem('currUser', JSON.stringify(currUser))
-            window.location.href = "/";
+            window.location.href = "/login";
           });
         }
       
@@ -112,7 +112,7 @@ $(document).ready(function(){
       );
        function submitNewMentor(Mentor){
          $.post("/api/Mentors", Mentor, function(){
-           window.location.href ="/"
+           window.location.href ="/login"
          })
        }    
       })
