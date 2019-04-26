@@ -1,3 +1,45 @@
-body{
-    background-image:url(background.jpg)
+/* body{
+    background-image:url(background.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+} */
+
+/* .nav-link, .navbar-brand {
+    font-family: 'Varela Round', sans-serif;
+} */
+
+* {
+    font-family: 'Varela Round', sans-serif;
+}
+
+/* Centered text in header*/
+.centered {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    font-size: 3vh;
+    font-weight: bolder;
+    width: 60%;
+    border-top:-10px;
+    text-align: center;
+}
+
+.jumbotron {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  opacity: .7;
+}
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+    color: #ffffff;
+}
+a {
+    color: #ffffff;
+}
+
+.divder {
+    padding-top: 10px;
+    width: 100%;
 }
