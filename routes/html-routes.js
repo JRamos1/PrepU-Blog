@@ -6,12 +6,10 @@ module.exports = function(app){
         res.sendFile(path.join(__dirname, "../public/index.html"));
     });
 
-    app.get("/StudentReg", function(req, res){
-        res.sendFile(path.join(__dirname, "../public/StudentReg.html"));
-    });
-
-    app.get("/MentorReg", function(req, res){
-        res.sendFile(path.join(__dirname, "../public/MentorReg.html"));
-    });
+    
+    app.get("/login", function(req, res){
+        res.sendfile(path.join(__dirname, "../public/login.html"))
+    })
+    
 };
 
