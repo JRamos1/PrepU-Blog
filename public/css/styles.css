@@ -9,24 +9,47 @@
 } */
 * {
     font-family: 'Varela Round', sans-serif;
+    font-family: Helvetica;
+
 }
 /* Centered text in header*/
 .centered {
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #000000;
     font-size: 3vh;
-    font-weight: bolder;
     width: 100%;
     border-top:-10px;
     text-align: center;
+    font-family: Helvetica;
+
 }
+
+.slow-entrance{
+    -webkit-animation: mymove 3s ; /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 5s; /* Safari 4.0 - 8.0 */
+    animation: mymove 10s ;
+    animation-delay: 1s;
+}
+
+@-webkit-keyframes mymove {
+    from {left: 100px;}
+    to {left: 200px;}
+  }
+  
+  @keyframes mymove {
+    from {top: 100px;}
+    to {bottom: 200px;}
+  }
+
+
 /* Campus front page image*/
 #frontImg {
    width:100%; 
    border-radius:10px;
+   -webkit-filter: brightness(0.50);
+   filter: brightness(0.50);
 }
 
 a {
@@ -35,9 +58,9 @@ a {
 
 .navbar {
     background-color: #000;
-    /* opacity: .85; */
     padding-top: 0px;
     padding-bottom: 0px;
+    height: 70px
 }
 /* Empty divider for sections*/
 .divder {
@@ -47,19 +70,22 @@ a {
 
 .img-fluid {
     border-radius: 40px;
-    height: 75%;
-    width: 75%;
+    /* height: 80%;
+    width: 80%; */
+    float: left;
 }
 
 .card {
     border: none;
 }
 
-.jumbotron {
+/* .jumbotron {
     background-color: #ffffff;
     padding-top: 10px;
     padding-bottom: 10px;
-}
+    width: 25%;
+    height: 25%;
+} */
 
 footer {
     bottom: 0;
@@ -76,19 +102,31 @@ footer {
 }
 /* Jumbotron overlay*/
 .overlay {
-    padding-top: 2px;
+    padding-top: 10px;
     padding-bottom: 2px;
-    opacity: .9;
+    /* opacity: .9; */
+    font-family: Helvetica;
+    color: aliceblue;
+    font-size: 30px;
   }
+
+h4{
+    font-size: 28px;
+    font-family: Helvetica;
+}
 
 h5 {
     font-size: 3vw;
     font-weight: bolder;
+    font-family: Helvetica;
+
 }
 
 #infoContent {
 font-size: 2vw;
 text-align: center;
+font-family: Helvetica;
+
 }
 
 .card-img-top {
@@ -98,4 +136,19 @@ text-align: center;
 
 .card{
     text-align: center;
+}
+
+#about-us {
+    font-size: 18px;
+    font-family: Helvetica;
+    color: #000000;
+}
+
+
+#about-us-signup {
+    font-size: 18px;
+    font-family: Helvetica;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: underline;
 }
