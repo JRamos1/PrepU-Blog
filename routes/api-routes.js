@@ -38,7 +38,7 @@ module.exports = function(app) {
     });
 
 
-    //Takes user registration info and sends to "/api/Students" route (passport/bcrypt version)
+    //Takes user registration info and sends to "/api/Students" and "/api/Mentors" routes (passport/bcrypt version)
     module.exports = function(app,passport){
     
     
