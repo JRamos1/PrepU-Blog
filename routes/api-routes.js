@@ -41,28 +41,25 @@ module.exports = function(app) {
     //Takes user registration info and sends to "/api/Students" route (passport/bcrypt version)
     module.exports = function(app,passport){
     
-    app.get('/studentRegsiter', authController.studentRegister);
     
-
-    app.get('/mentorRegsiter', authController.mentorRegister);
-
-    
-    app.get('/signin', authController.signin);
-    
-    
-    app.post('/signup', passport.authenticate('local-signup',  { successRedirect: '/dashboard',
-                                                        failureRedirect: '/signup'}
+    app.post('/api/Students', passport.authenticate('local-signup',  { successRedirect: '/login',
+                                                        failureRedirect: '/index'}
                                                         ));
+
+    app.post('/api/Mentors', passport.authenticate('local-signup',  { successRedirect: '/login',
+                                                        failureRedirect: '/index'}
+                                                        ));
+            
     
     
-    app.get('/dashboard',isLoggedIn, authController.dashboard);
+    app.get('/index',isLoggedIn, authController.index);
     
     
     app.get('/logout',authController.logout);
     
     
-    app.post('/signin', passport.authenticate('local-signin',  { successRedirect: '/dashboard',
-                                                        failureRedirect: '/signin'}
+    app.post('/login', passport.authenticate('local-signin',  { successRedirect: '/index',
+                                                        failureRedirect: '/login'}
                                                         ));
     
     
@@ -70,7 +67,7 @@ module.exports = function(app) {
         if (req.isAuthenticated())
             return next();
     
-        res.redirect('/signin');
+        res.redirect('/login');
     }
     
     

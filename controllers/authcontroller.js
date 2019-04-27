@@ -1,7 +1,7 @@
 var exports = module.exports = {}
 
 
-exports.studentRegister = function(req,res){
+/* exports.studentRegister = function(req,res){
 
 	res.render('studentRegister'); 
 
@@ -11,17 +11,11 @@ exports.mentorRegister = function(req,res){
 
 	res.render('mentorRegister'); 
 
-}
+} */
 
-exports.signin = function(req,res){
+exports.index = function(req,res){
 
-	res.render('signin'); 
-
-}
-
-exports.dashboard = function(req,res){
-
-	res.render('dashboard'); 
+	res.redirect('index.html'); 
 
 }
 
