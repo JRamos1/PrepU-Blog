@@ -31,6 +31,9 @@ app.use(passport.session());
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
+//load passport strategies
+require('./app/config/passport/passport.js')(passport, models.user);
+
 
 db.sequelize.sync({force: true}).then(function(){
     app.listen(PORT, function(){
