@@ -1,3 +1,101 @@
-body{
-    background-image:url(background.jpg)
+/* body{
+    background-image:url(background.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+} */
+
+/* .nav-link, .navbar-brand {
+    font-family: 'Varela Round', sans-serif;
+} */
+* {
+    font-family: 'Varela Round', sans-serif;
+}
+/* Centered text in header*/
+.centered {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    font-size: 3vh;
+    font-weight: bolder;
+    width: 100%;
+    border-top:-10px;
+    text-align: center;
+}
+/* Campus front page image*/
+#frontImg {
+   width:100%; 
+   border-radius:10px;
+}
+
+a {
+    color: #ffffff;
+}
+
+.navbar {
+    background-color: #000;
+    /* opacity: .85; */
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+/* Empty divider for sections*/
+.divder {
+    padding-top: 20px;
+    width: 100%;
+}
+
+.img-fluid {
+    border-radius: 40px;
+    height: 75%;
+    width: 75%;
+}
+
+.card {
+    border: none;
+}
+
+.jumbotron {
+    background-color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer {
+    bottom: 0;
+    text-align: center;
+    background-color: #000;
+    color: white;
+    font-size: 8px;
+    padding-bottom: 30px;
+}
+/* Contact us icon links*/
+.icons {
+    font-size: 20px;
+    padding: 20px;
+}
+/* Jumbotron overlay*/
+.overlay {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    opacity: .9;
+  }
+
+h5 {
+    font-size: 3vw;
+    font-weight: bolder;
+}
+
+#infoContent {
+font-size: 2vw;
+text-align: center;
+}
+
+.card-img-top {
+    width: 80%;
+    text-align: center;
+}
+
+.card{
+    text-align: center;
 }
