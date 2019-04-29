@@ -62,8 +62,13 @@ $(document).ready(function(){
           };
       
           console.log(newStudent);
+          module.exports = newStudent;
+        }
+        );
+
+          //For below code, exported to studentPassport.js to login
       
-          // If we're updating a post run updatePost to update a post
+/*           // If we're updating a post run updatePost to update a post
           // Otherwise run submitPost to create a whole new post
             submitStudentData(newStudent);
             console.log(newStudent)
@@ -72,11 +77,12 @@ $(document).ready(function(){
       
         // Submits a new post and brings user to blog page upon completion
         function submitStudentData(Student) {
+          console.log(newStudent);
           $.post("/api/Students/", Student, function(currUser) {
             localStorage.setItem('currUser', JSON.stringify(currUser))
             window.location.href = "/login";
           });
-        }
+        } */
       
         // Gets post data for a post if we're editing
       
