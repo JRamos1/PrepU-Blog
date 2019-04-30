@@ -1,4 +1,5 @@
 let db = require("../models");
+const authController = require('../controllers/authcontroller.js');
 
 module.exports = function(app) {
 // Gets user information based on id param    
@@ -36,8 +37,43 @@ module.exports = function(app) {
         });
     });
 
+
+    //Takes user registration info and sends to "/api/Students" and "/api/Mentors" routes (passport/bcrypt version)
+    module.exports = function(app,passport){
     
-// Takes user registration info and sends to "/api/Students" route
+    
+    app.post('/api/Students', passport.authenticate('local-signup',  { successRedirect: '/login',
+                                                        failureRedirect: '/index'}
+                                                        ));
+
+    app.post('/api/Mentors', passport.authenticate('local-signup',  { successRedirect: '/login',
+                                                        failureRedirect: '/index'}
+                                                        ));
+            
+    
+    
+    app.get('/index',isLoggedIn, authController.index);
+    
+    
+    app.get('/logout',authController.logout);
+    
+    
+    app.post('/login', passport.authenticate('local-signin',  { successRedirect: '/index',
+                                                        failureRedirect: '/login'}
+                                                        ));
+    
+    
+    function isLoggedIn(req, res, next) {
+        if (req.isAuthenticated())
+            return next();
+    
+        res.redirect('/login');
+    }
+    
+    
+    }
+    
+/* // Takes user registration info and sends to "/api/Students" route
     app.post("/api/Students", function(req, res){
         console.log(req.body);
         db.Student.create({
@@ -66,7 +102,7 @@ module.exports = function(app) {
         .then(function(results){
             res.json(results)
         });
-    });
+    });*/
 
     
 };
