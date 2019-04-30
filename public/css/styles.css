@@ -8,7 +8,7 @@
     font-family: 'Varela Round', sans-serif;
 } */
 * {
-    font-family: 'Varela Round', sans-serif;
+    /* font-family: 'Varela Round', sans-serif; */
     font-family: Helvetica;
 
 }
@@ -22,7 +22,7 @@
     width: 100%;
     border-top:-10px;
     text-align: center;
-    font-family: Helvetica;
+    /* font-family: Helvetica; */
 
 }
 
@@ -60,7 +60,6 @@ a {
     background-color: #000;
     padding-top: 0px;
     padding-bottom: 0px;
-    height: 70px
 }
 /* Empty divider for sections*/
 .divder {
@@ -68,12 +67,7 @@ a {
     width: 100%;
 }
 
-.img-fluid {
-    border-radius: 40px;
-    /* height: 80%;
-    width: 80%; */
-    float: left;
-}
+
 
 .card {
     border: none;
@@ -151,4 +145,21 @@ font-family: Helvetica;
     color: #000000;
     font-weight: bold;
     text-decoration: underline;
+}
+
+/* .img-fluid {
+    border-radius: 40px;
+    /* height: 80%;
+    width: 80%;
+    float: left;
+}  */
+@media screen and (min-width: 960px) {
+    .img-fluid {
+        float: left;
+        height: 200px;
+        width: 250px;
+    }
+    /* p {
+
+    } */
 }
