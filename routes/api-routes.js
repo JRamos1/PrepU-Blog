@@ -1,7 +1,8 @@
 let db = require("../models");
 const authController = require('../controllers/authcontroller.js');
 
-module.exports = function(app) {
+
+module.exports = function(app,passport){
 // Gets user information based on id param    
     app.get("/api/Students/:id", function (req, res){
         db.Student.findAll({
@@ -39,14 +40,13 @@ module.exports = function(app) {
 
 
     //Takes user registration info and sends to "/api/Students" and "/api/Mentors" routes (passport/bcrypt version)
-    module.exports = function(app,passport){
     
-    
-    app.post('/api/Students', passport.authenticate('local-signup',  { successRedirect: '/login',
+    // app.post('/api/Students', (req, res) => console.log('here', req.body))
+    app.post('/api/Students', passport.authenticate('local-Student',  { successRedirect: '/login',
                                                         failureRedirect: '/index'}
                                                         ));
 
-    app.post('/api/Mentors', passport.authenticate('local-signup',  { successRedirect: '/login',
+    app.post('/api/Mentors', passport.authenticate('local-Mentor',  { successRedirect: '/login',
                                                         failureRedirect: '/index'}
                                                         ));
             
@@ -103,6 +103,3 @@ module.exports = function(app) {
             res.json(results)
         });
     });*/
-
-    
-};

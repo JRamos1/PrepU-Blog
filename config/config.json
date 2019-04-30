@@ -3,11 +3,11 @@
     "username": "root",
     "password": "root",
     "database": "projectdb",
-    "port": 8889,
+    "port": 3306,
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
-  "8080": {
+  "8889": {
     "username": "root",
     "password": "root",
     "database": "projectdb",
