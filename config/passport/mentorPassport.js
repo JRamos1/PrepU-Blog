@@ -26,7 +26,7 @@ passport.deserializeUser(function(id, done) {
 });
 
 
-passport.use('local-signup', new LocalStrategy(
+passport.use('local-Mentor', new LocalStrategy(
 
   {           
     usernameField : 'email',

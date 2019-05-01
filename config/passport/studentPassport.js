@@ -1,10 +1,9 @@
-
   //load bcrypt
   var bCrypt = require('bcrypt-nodejs');
 
-  module.exports = function(passport,student){
+  module.exports = function(passport,Student){
 
-  var Student = student;
+  // var Student = student;
   var LocalStrategy = require('passport-local').Strategy;
 
 
@@ -15,7 +14,7 @@
 
   // used to deserialize the user
   passport.deserializeUser(function(id, done) {
-      Student.findById(id).then(function(student) {
+      Student.findOne({where: {id:id}}).then(function(student) {
         if(student){
           done(null, student.get());
         }
@@ -27,7 +26,7 @@
   });
 
 
-  passport.use('local-signup', new LocalStrategy(
+  passport.use('local-Student', new LocalStrategy(
 
     {           
       usernameField : 'email',
@@ -36,15 +35,14 @@
     },
 
     function(req, email, password, done){
-       
 
       var generateHash = function(password) {
       return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
       };
-
-       Student.findOne({where: {email:email}}).then(function(student){
-
-      if(student)
+console.log('test' + email)
+       Student.findOne({where: {email:email}}).then(function(emailTaken){
+console.log('testing' + emailTaken)
+      if(emailTaken)
       {
         return done(null, false, {message : 'That email is already taken'} );
       }
@@ -52,16 +50,16 @@
       else
       {
         var userPassword = generateHash(password);
-        var data =
+       var data =
         { email:email,
-        password:userPassword,
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        major:req.body.major,
-        career:req.body.career
+        password: userPassword,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        major: req.body.major,
+        career: req.body.career
         };
 
-
+console.log('test2', data)
         Student.create(data).then(function(newStudent,created){
           if(!newStudent){
             return done(null,false);
@@ -105,7 +103,6 @@
     var isValidPassword = function(userpass,password){
       return bCrypt.compareSync(password, userpass);
     }
-
     Student.findOne({ where : { email: email}}).then(function (student) {
 
       if (!student) {
