@@ -1,123 +1,82 @@
 $(document).ready(function(){
 
-  if (localStorage.getItem('currUser')) {
-    console.log('Logged in user: ', JSON.parse(localStorage.getItem('currUser')))
-  } else {
-    console.log('Nobody logged in!')
-  }
-
-    let url = window.location.search;
-
-    let userID;
-
-    if (url.indexOf("?post_id=") !== -1) {
-        postId = url.split("=")[1];
-        getUserData(userID);
-      }
+  
 
       $(document).ready(function() {
-        // Gets an optional query string from our url (i.e. ?post_id=23)
-        var url = window.location.search;
-        var postId;
-        // Sets a flag for whether or not we're updating a post to be false initially
         
-      
-        // If we have this section in our url, we pull out the post id from the url
-        // In localhost:8080/cms?post_id=1, postId is 1
-        if (url.indexOf("?post_id=") !== -1) {
-          postId = url.split("=")[1];
-          getStudentData(postId);
-        }
-      
-        // Getting jQuery references to the post body, title, form, and category select
-        let regForm = $("#studentRegister")
-        
-        // Giving the postCategorySelect a default value
-        
-        // Adding an event listener for when the form is submitted
+        let regForm = $("#userRegister")
+    
         $(regForm).on("submit", function handleFormSubmit(event) {
           event.preventDefault();
-           let studentFirstName = $("#firstName").val().trim()
-           let studentLastName = $("#lastName").val().trim()
-           let studentEmail = $("#email").val().trim()
-           let studentPassword = $("#password").val().trim()
-           let studentMajor = $("#major").val().trim()
-           let studentCareer = $("#career").val().trim()
-           console.log("hi", studentCareer)
-           
-           
+           let userFirstName = $("#firstName").val().trim()
+           let userLastName = $("#lastName").val().trim()
+           let userEmail = $("#email").val().trim()
+           let userPassword = $("#password").val().trim()
+           let userMajor = $("#major").val().trim()
+           let userOccupation = $("#occupation").val()
+           console.log("hi", userFirstName)
         
-        
-          // Wont submit the post if we are missing a body or a title
-          if (!studentFirstName || !studentLastName || !studentEmail || !studentPassword || !studentCareer || !studentMajor) {
+          //Wont submit the post if we are missing a body or a title
+          if (!userFirstName || !userLastName || !userEmail || !userPassword || !userOccupation || !userMajor) {
             return;
           }
           // Constructing a newPost object to hand to the database
-          var newStudent = {
-            firstName: studentFirstName,
-            lastName: studentLastName,
-            email: studentEmail,
-            password: studentPassword,
-            major: studentMajor,
-            career: studentCareer
+          var newUser = {
+            firstName: userFirstName,
+            lastName: userLastName,
+            email: userEmail,
+            password: userPassword,
+            major: userMajor,
+            occupation: userOccupation
           };
-          // console.log('newStudent');
-          // console.log(newStudent);
-      
-          // If we're updating a post run updatePost to update a post
-          // Otherwise run submitPost to create a whole new post
-            submitStudentData(newStudent);
-            // console.log(newStudent)
+          
+           console.log(newUser);
+           submitUserData(newUser)
           }
         );
       
-        // Submits a new post and brings user to blog page upon completion
-        function submitStudentData(Student) {
-          console.log(Student)
-          $.post("/api/Students", Student , function() {
-            window.location.href = "/login";
-          });
+        function submitUserData(User){
+          console.log(User)
+          $.post("/api/Users", User, function(){
+            window.location.href = "/login"
+          })
         }
       })
-        // Gets post data for a post if we're editing
-      
-         let mentorReg = $("#mentorRegister")
+       
+       let postEntry = $("#createPost")
+       
+       $(postEntry).on("submit",function validateForm(event){
+         event.preventDefault()
 
-         $(mentorReg).on("submit", function formValidate(event){
-           event.preventDefault();
-           
-           let mentorFirstName = $("#mentorFirstName").val().trim()
-           let mentorLastName = $("#mentorLastName").val().trim()
-           let mentorEmail = $("#mentorEmail").val().trim()
-           let mentorPassword = $("#mentorPassword").val().trim()
-           let mentorMajor = $("#mentorMajor").val().trim()
-           let mentorCareer = $("#mentorCareer").val().trim()
+         let postTitle = $("#postTitle").val().trim();
+         let postTopic = $("#postTopic").val().trim()
+         let postDescription = $("#postDescription").val().trim()
+         let postBody = $("#postBody").val().trim()
 
-           if (!mentorFirstName || !mentorLastName || !mentorEmail || !mentorPassword || !mentorCareer || !mentorMajor) {
-            return;
+         if (!postTitle || !postTopic || !postDescription || !postBody) {
+          return;
          }
 
-         let newMentor = {
-          firstName: mentorFirstName,
-          lastName: mentorLastName,
-          email: mentorEmail,
-          password: mentorPassword,
-          major: mentorMajor,
-          career: mentorCareer
-        };
-      
-        
-         submitNewMentor(newMentor)
-         console.log(newMentor)
-        }
-      );
-       function submitNewMentor(Mentor){
-         $.post("/api/Mentors", Mentor, function(){
-           window.location.href ="/login"
+         let newPost ={
+           title: postTitle,
+           category: postTopic,
+           description: postDescription,
+           entry: postBody
+         }
+
+         submitNewPost(newPost)
+       })
+
+
+       function submitNewPost(Post){
+         $.post("/api/posts", Post, function(){
+           window.location.href = "/profile"
+
          })
-       }    
+       }
       })
 
+    
 
 
 
