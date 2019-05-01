@@ -42,11 +42,7 @@ module.exports = function(app,passport){
     //Takes user registration info and sends to "/api/Students" and "/api/Mentors" routes (passport/bcrypt version)
     
     // app.post('/api/Students', (req, res) => console.log('here', req.body))
-    app.post('/api/Students', passport.authenticate('local-Student',  { successRedirect: '/login',
-                                                        failureRedirect: '/index'}
-                                                        ));
-
-    app.post('/api/Mentors', passport.authenticate('local-Mentor',  { successRedirect: '/login',
+    app.post('/api/Students', passport.authenticate('local-signup',  { successRedirect: '/login',
                                                         failureRedirect: '/index'}
                                                         ));
             

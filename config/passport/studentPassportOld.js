@@ -26,7 +26,7 @@
   });
 
 
-  passport.use('local-Student', new LocalStrategy(
+  passport.use('local-studentSignup', new LocalStrategy(
 
     {           
       usernameField : 'email',
@@ -86,7 +86,7 @@ console.log('test2', data)
   ));
     
   //LOCAL SIGNIN
-  passport.use('local-signin', new LocalStrategy(
+  passport.use('local-studentSignin', new LocalStrategy(
     
   {
 

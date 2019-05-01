@@ -36,8 +36,7 @@ require("./routes/api-routes.js")(app,passport);
 require("./routes/html-routes.js")(app,passport);
 
 
-require('./config/passport/studentPassport.js')(passport, db.Student);
-require('./config/passport/mentorPassport.js')(passport, db.Mentor);
+require('./config/passport/passport.js')(passport, db.User);
 
 
 
