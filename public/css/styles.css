@@ -104,20 +104,25 @@ footer {
     font-size: 30px;
   }
 
-h4{
+h4 {
     font-size: 28px;
     font-family: Helvetica;
 }
+h3 {
+    /* font-size: 1rem; */
+    font-family: Helvetica;
+    font-weight: bolder;
+}
 
 h5 {
-    font-size: 3vh;
+    font-size: 1rem;
     font-weight: bolder;
     font-family: Helvetica;
 
 }
-
+/* change px and vh to  rem for responsive text */
 #infoContent {
-font-size: 3vh;
+font-size: 1rem;
 text-align: center;
 font-family: Helvetica;
 
@@ -133,9 +138,10 @@ font-family: Helvetica;
 }
 
 #about-us {
-    font-size: 18px;
+    font-size: 1rem;
     font-family: Helvetica;
     color: #000000;
+    text-align: left;
 }
 
 
@@ -147,19 +153,36 @@ font-family: Helvetica;
     text-decoration: underline;
 }
 
-/* .img-fluid {
+.img-fluid {
     border-radius: 40px;
+    margin: 10px;
     /* height: 80%;
     width: 80%;
-    float: left;
-}  */
-@media screen and (min-width: 960px) {
+    float: left; */
+}  
+@media only screen and (min-width: 700px) {
     .img-fluid {
         float: left;
         height: 200px;
         width: 250px;
     }
-    /* p {
+    .float-right {
+        float: right;
+    }
 
-    } */
+
+    /* body {
+        background-color: lightblue;
+      } */
 }
+/* @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  } */
+
+  @media only screen and (max-width: 768px) {
+h3 {
+     font-size: 20px;
+}
+  }
