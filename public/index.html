@@ -20,7 +20,7 @@
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-    <a class="navbar-brand" href="/">PREP U</a>
+    <a class="navbar-brand" href="/index">PREP U</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb"
       aria-expanded="true">
       <span class="navbar-toggler-icon"></span>
@@ -29,11 +29,7 @@
     <div id="navb" class="navbar-collapse collapse hide">
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#studentRegister" data-toggle="modal" data-target="#studentRegister">Student Sign
-            Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#mentorRegister" data-toggle="modal" data-target="#mentorRegister"> Mentor Sign
+          <a class="nav-link" href="#userRegister" data-toggle="modal" data-target="#userRegister">User Sign
             Up</a>
         </li>
         <li class="nav-item">
@@ -43,7 +39,7 @@
     </div>
   </nav>
   <!-- Modal for student sign up -->
-  <form class="modal fade form-group" id="studentRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  <form class="modal fade form-group" id="userRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -75,9 +71,12 @@
             <label data-error="wrong" data-success="right" for="major">Preferred Major</label>
           </div>
           <div class="md-form mb-4">
-            <input type="text" id="career" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="career">Preferred Career</label>
-          </div>
+              <label for="occupation">Occupation</label>
+              <select class="form-control" id="occupation">
+                <option>Student</option>
+                <option>Mentor</option>
+              </select>
+            </div>
         </div>
         <div class="modal-footer d-flex justify-content-center">
           <button class="btn btn-deep-orange" type="submit">Sign up</button>
@@ -85,50 +84,6 @@
       </div>
     </div>
   </form>
-  <!-- Modal for mentor sign up -->
-  <form class="modal fade form-group" id="mentorRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body mx-3">
-          <div class="md-form mb-4">
-            <input type="text" id="mentorFirstName" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="mentorFirstName">First Name</label>
-          </div>
-          <div class="md-form mb-4">
-            <input type="text" id="mentorLastName" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="mentorLastName">Last Name</label>
-          </div>
-          <div class="md-form mb-4">
-            <input type="email" id="mentorEmail" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="mentorEmail">Email</label>
-          </div>
-          <div class="md-form mb-4">
-            <input type="password" id="mentorPassword" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="mentorPassword">Password</label>
-          </div>
-          <div class="md-form mb-4">
-            <input type="text" id="mentorMajor" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="mentorMajor">Major</label>
-          </div>
-          <div class="md-form mb-4">
-            <input type="text" id="mentorCareer" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="mentorCareer">Career</label>
-          </div>
-        </div>
-        <div class="modal-footer d-flex justify-content-center">
-          <button class="btn btn-deep-orange" type="submit">Sign up</button>
-        </div>
-      </div>
-    </div>
-  </form>
-  <div class="container"></div>
 
   <!-- Header -->
   <img src="./css/background.jpg" alt="columbia campus" id="frontImg">

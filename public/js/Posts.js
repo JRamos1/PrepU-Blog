@@ -26,99 +26,151 @@ $(document).ready(function(){
         // In localhost:8080/cms?post_id=1, postId is 1
         if (url.indexOf("?post_id=") !== -1) {
           postId = url.split("=")[1];
-          getStudentData(postId);
+          getUserData(postId);
         }
       
-        // Getting jQuery references to the post body, title, form, and category select
-        let regForm = $("#studentRegister")
+        /* let regForm = $("#userRegister")
         
         // Giving the postCategorySelect a default value
         
         // Adding an event listener for when the form is submitted
         $(regForm).on("submit", function handleFormSubmit(event) {
           event.preventDefault();
-           let studentFirstName = $("#firstName").val().trim()
-           let studentLastName = $("#lastName").val().trim()
-           let studentEmail = $("#email").val().trim()
-           let studentPassword = $("#password").val().trim()
-           let studentMajor = $("#major").val().trim()
-           let studentCareer = $("#career").val().trim()
-           console.log("hi", studentCareer)
+           let userFirstName = $("#firstName").val().trim()
+           let userLastName = $("#lastName").val().trim()
+           let userEmail = $("#email").val().trim()
+           let userPassword = $("#password").val().trim()
+           let userMajor = $("#major").val().trim()
+           let userOccupation = $("#occupation").val().trim()
+           console.log("hi", userOccupation)
            
            
         
         
           // Wont submit the post if we are missing a body or a title
-          if (!studentFirstName || !studentLastName || !studentEmail || !studentPassword || !studentCareer || !studentMajor) {
+          if (!userFirstName || !userLastName || !userEmail || !userPassword || !userOccupation || !userMajor) {
             return;
           }
           // Constructing a newPost object to hand to the database
-          var newStudent = {
-            firstName: studentFirstName,
-            lastName: studentLastName,
-            email: studentEmail,
-            password: studentPassword,
-            major: studentMajor,
-            career: studentCareer
+          var newUser = {
+            firstName: userFirstName,
+            lastName: userLastName,
+            email: userEmail,
+            password: userPassword,
+            major: userMajor,
+            occupation: userOccupation
           };
-          // console.log('newStudent');
-          // console.log(newStudent);
+          // console.log('newUser');
+          // console.log(newUser);
       
           // If we're updating a post run updatePost to update a post
           // Otherwise run submitPost to create a whole new post
-            submitStudentData(newStudent);
-            // console.log(newStudent)
+            submitUserData(newUser);
+            // console.log(newUser)
           }
         );
       
         // Submits a new post and brings user to blog page upon completion
-        function submitStudentData(Student) {
-          console.log(Student)
-          $.post("/api/Students", Student , function() {
+        function submitUserData(User) {
+          console.log(User)
+          $.post("/api/Users", User , function() {
             window.location.href = "/login";
+          });
+        }
+      }) */
+        // Getting jQuery references to the post body, title, form, and category select
+        let regForm = $("#userRegister")
+        
+        // Giving the postCategorySelect a default value
+        
+        // Adding an event listener for when the form is submitted
+        $(regForm).on("submit", function handleFormSubmit(event) {
+          event.preventDefault();
+           let userFirstName = $("#firstName").val().trim()
+           let userLastName = $("#lastName").val().trim()
+           let userEmail = $("#email").val().trim()
+           let userPassword = $("#password").val().trim()
+           let userMajor = $("#major").val().trim()
+           let userOccupation = $("#occupation").val().trim()
+           console.log("hi", userOccupation)
+           
+           
+        
+        
+          // Wont submit the post if we are missing a body or a title
+          if (!userFirstName || !userLastName || !userEmail || !userPassword || !userOccupation || !userMajor) {
+            return;
+          }
+          // Constructing a newPost object to hand to the database
+          var newUser = {
+            firstName: userFirstName,
+            lastName: userLastName,
+            email: userEmail,
+            password: userPassword,
+            major: userMajor,
+            occupation: userOccupation
+          };
+          // console.log('newUser');
+          // console.log(newUser);
+      
+          // If we're updating a post run updatePost to update a post
+          // Otherwise run submitPost to create a whole new post
+            submitUserData(newUser);
+            // console.log(newUser)
+          }
+        );
+      
+        // Submits a new post and brings user to blog page upon completion
+        function submitUserData(User) {
+          console.log(User)
+          $.post("/api/Users", User , function() {
+          });
+        }
+      })
+
+      let signin = $("#signin")
+        
+        // Giving the postCategorySelect a default value
+        
+        // Adding an event listener for when the form is submitted
+        $(signin).on("submit", function handleFormSubmit(event) {
+          event.preventDefault();
+           let signinEmail = $("#emailSignin").val()
+           let signinPassword = $("#passwordSignin").val()
+           console.log(signinEmail);
+           
+        
+        
+          // Wont submit the post if we are missing a body or a title
+          if (!signinEmail || !signinPassword) {
+            return;
+          }
+          // Constructing a newPost object to hand to the database
+          var newSignin = {
+            email: signinEmail,
+            password: signinPassword,
+          };
+          console.log(newSignin);
+          // console.log('newUser');
+          // console.log(newUser);
+      
+          // If we're updating a post run updatePost to update a post
+          // Otherwise run submitPost to create a whole new post
+            submitUserSignin(newSignin);
+            // console.log(newUser)
+          }
+        );
+      
+        // Submits a new post and brings user to blog page upon completion
+        function submitUserSignin(checkSignin) {
+          console.log(checkSignin)
+          $.post("/login", checkSignin , function() {
           });
         }
       })
         // Gets post data for a post if we're editing
       
-         let mentorReg = $("#mentorRegister")
-
-         $(mentorReg).on("submit", function formValidate(event){
-           event.preventDefault();
-           
-           let mentorFirstName = $("#mentorFirstName").val().trim()
-           let mentorLastName = $("#mentorLastName").val().trim()
-           let mentorEmail = $("#mentorEmail").val().trim()
-           let mentorPassword = $("#mentorPassword").val().trim()
-           let mentorMajor = $("#mentorMajor").val().trim()
-           let mentorCareer = $("#mentorCareer").val().trim()
-
-           if (!mentorFirstName || !mentorLastName || !mentorEmail || !mentorPassword || !mentorCareer || !mentorMajor) {
-            return;
-         }
-
-         let newMentor = {
-          firstName: mentorFirstName,
-          lastName: mentorLastName,
-          email: mentorEmail,
-          password: mentorPassword,
-          major: mentorMajor,
-          career: mentorCareer
-        };
-      
-        
-         submitNewMentor(newMentor)
-         console.log(newMentor)
-        }
-      );
-       function submitNewMentor(Mentor){
-         $.post("/api/Mentors", Mentor, function(){
-           window.location.href ="/login"
-         })
-       }    
-      })
-
-
+       
 
 
   //localstorage.getItem("currUser")

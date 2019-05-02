@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Datatypes){
-    let Student = sequelize.define("Student",{
+    let User = sequelize.define("User",{
         firstName:{
             type: Datatypes.STRING,
             allowNull: false,
@@ -35,12 +35,12 @@ module.exports = function(sequelize, Datatypes){
             type: Datatypes.STRING,
             allowNull: false,
             validate:{
-                len: [6-20]
+                len: [1-20]
             }
         },
        
 
-        career:{
+        occupation:{
             type: Datatypes.STRING,
             allowNull: false,
             validate:{
@@ -57,5 +57,5 @@ module.exports = function(sequelize, Datatypes){
 
 
     });
-    return Student
+    return User
 };

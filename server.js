@@ -1,6 +1,6 @@
 
 const express = require("express")
-const passport   = require('passport')
+// const passport   = require('passport')
 const session    = require('express-session')
 
 
@@ -26,17 +26,20 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 })); // session secret
+
+var passport = require('./config/passport/passport');
  
 app.use(passport.initialize());
  
 app.use(passport.session());
+
+// require('./config/passport/passport.js')(passport, db.User);
 
 
 require("./routes/api-routes.js")(app,passport);
 require("./routes/html-routes.js")(app,passport);
 
 
-require('./config/passport/passport.js')(passport, db.User);
 
 
 
