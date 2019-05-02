@@ -35,7 +35,7 @@ module.exports = function(sequelize, Datatypes){
             type: Datatypes.STRING,
             allowNull: false,
             validate:{
-                len: [6-20]
+                len: [1-20]
             }
         },
        

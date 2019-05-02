@@ -1,7 +1,10 @@
  //load bcrypt
  var bCrypt = require('bcrypt-nodejs');
+ const User = require("../../models").User;
+ var passport = require('passport')
 
- module.exports = function(passport,User){
+
+//  module.exports = function(passport){
 
  // var User = user;
  var LocalStrategy = require('passport-local').Strategy;
@@ -16,7 +19,8 @@
  passport.deserializeUser(function(id, done) {
      User.findOne({where: {id:id}}).then(function(user) {
        if(user){
-         done(null, user.get());
+         console.log("herer", user.get())
+         return done(null, user.get());
        }
        else{
          done(user.errors,null);
@@ -26,7 +30,7 @@
  });
 
 
- passport.use('local-userSignup', new LocalStrategy(
+ passport.use('local-signup', new LocalStrategy(
 
    {           
      usernameField : 'email',
@@ -61,6 +65,7 @@ console.log('testing' + emailTaken)
 
 console.log('test2', data)
        User.create(data).then(function(newUser,created){
+         console.log('created', created)
          if(!newUser){
            return done(null,false);
          }
@@ -86,7 +91,7 @@ console.log('test2', data)
  ));
    
  //LOCAL SIGNIN
- passport.use('local-userSignin', new LocalStrategy(
+ passport.use('local-signin', new LocalStrategy(
    
  {
 
@@ -98,26 +103,31 @@ console.log('test2', data)
 
  function(req, email, password, done) {
 
-   var User = user;
-
+   //var User = user;
+    console.log(email);
    var isValidPassword = function(userpass,password){
      return bCrypt.compareSync(password, userpass);
    }
    User.findOne({ where : { email: email}}).then(function (user) {
+     console.log(user);
 
      if (!user) {
+       console.log("Email does not exist")
        return done(null, false, { message: 'Email does not exist' });
      }
 
+      console.log(password);
      if (!isValidPassword(user.password,password)) {
 
+      console.log("Incorrect password.")
        return done(null, false, { message: 'Incorrect password.' });
 
      }
 
-     var userinfo = user.get();
+     //var userinfo = user.get();
+     console.log(user);
 
-     return done(null,userinfo);
+     return done(null,user);
 
    }).catch(function(err){
 
@@ -131,4 +141,5 @@ console.log('test2', data)
  }
  ));
 
- }
+//  }
+module.exports = passport;

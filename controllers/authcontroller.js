@@ -14,8 +14,9 @@ exports.mentorRegister = function(req,res){
 } */
 
 exports.index = function(req,res){
+  console.log("authControllerRedirect");
 
-	res.redirect('/'); 
+	res.redirect('/index'); 
 
 }
 
