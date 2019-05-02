@@ -1,19 +1,6 @@
 $(document).ready(function(){
 
-  if (localStorage.getItem('currUser')) {
-    console.log('Logged in user: ', JSON.parse(localStorage.getItem('currUser')))
-  } else {
-    console.log('Nobody logged in!')
-  }
-
-    let url = window.location.search;
-
-    let userID;
-
-    if (url.indexOf("?post_id=") !== -1) {
-        postId = url.split("=")[1];
-        getUserData(userID);
-      }
+  
 
       $(document).ready(function() {
         // Gets an optional query string from our url (i.e. ?post_id=23)
@@ -33,7 +20,8 @@ $(document).ready(function(){
         
         // Giving the postCategorySelect a default value
         
-        // Adding an event listener for when the form is submitted
+        let regForm = $("#userRegister")
+    
         $(regForm).on("submit", function handleFormSubmit(event) {
           event.preventDefault();
            let userFirstName = $("#firstName").val().trim()
