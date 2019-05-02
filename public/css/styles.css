@@ -1,48 +1,39 @@
-/* body{
-    background-image:url(background.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-} */
-
-/* .nav-link, .navbar-brand {
-    font-family: 'Varela Round', sans-serif;
-} */
 * {
-    /* font-family: 'Varela Round', sans-serif; */
     font-family: Helvetica;
-
 }
+
+/* .slow-entrance{
+    -webkit-animation: mymove 5s ; Safari 4.0 - 8.0 */
+    /* animation: mymove 5s ;
+}
+@-webkit-keyframes mymove {
+    from {top: 150px;}
+    to {top: 200px;}
+  }
+
+  @keyframes mymove {
+    from {top: 150px;}
+    to {top: 200px;}
+  } */
 /* Centered text in header*/
 .centered {
     position: absolute;
-    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3vh;
+    font-size: 1.5rem;
     width: 100%;
-    border-top:-10px;
     text-align: center;
-    /* font-family: Helvetica; */
-
+    color: aliceblue;
+    top: 200px;
+    font-family: 'Varela Round', sans-serif;
 }
-
-.slow-entrance{
-    -webkit-animation: mymove 3s ; /* Safari 4.0 - 8.0 */
-    -webkit-animation-delay: 5s; /* Safari 4.0 - 8.0 */
-    animation: mymove 10s ;
-    animation-delay: 1s;
+.fade-in {
+    animation: fadeIn 5s;
 }
-
-@-webkit-keyframes mymove {
-    from {left: 100px;}
-    to {left: 200px;}
-  }
-  
-  @keyframes mymove {
-    from {top: 100px;}
-    to {bottom: 200px;}
-  }
-
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  } 
 
 /* Campus front page image*/
 #frontImg {
@@ -50,6 +41,7 @@
    border-radius:10px;
    -webkit-filter: brightness(0.50);
    filter: brightness(0.50);
+   margin-top: 80px;
 }
 
 a {
@@ -60,27 +52,17 @@ a {
     background-color: #000;
     padding-top: 0px;
     padding-bottom: 0px;
-
 }
+
 /* Empty divider for sections*/
 .divder {
     padding-top: 20px;
     width: 100%;
 }
 
-
-
 .card {
     border: none;
 }
-
-/* .jumbotron {
-    background-color: #ffffff;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 25%;
-    height: 25%;
-} */
 
 footer {
     bottom: 0;
@@ -90,27 +72,19 @@ footer {
     font-size: 10px;
     padding-bottom: 30px;
 }
+
 /* Contact us icon links*/
 .icons {
     font-size: 20px;
     padding: 20px;
 }
-/* Jumbotron overlay*/
-.overlay {
-    padding-top: 10px;
-    padding-bottom: 2px;
-    /* opacity: .9; */
-    font-family: Helvetica;
-    color: aliceblue;
-    font-size: 30px;
-  }
 
 h4 {
     font-size: 28px;
     font-family: Helvetica;
 }
+
 h3 {
-    /* font-size: 1rem; */
     font-family: Helvetica;
     font-weight: bolder;
 }
@@ -119,14 +93,12 @@ h5 {
     font-size: 1rem;
     font-weight: bolder;
     font-family: Helvetica;
-
 }
-/* change px and vh to  rem for responsive text */
-#infoContent {
-font-size: 1rem;
-text-align: center;
-font-family: Helvetica;
 
+#infoContent {
+    font-size: 1rem;
+    text-align: center;
+    font-family: Helvetica;
 }
 
 .card-img-top {
@@ -145,7 +117,6 @@ font-family: Helvetica;
     text-align: left;
 }
 
-
 #about-us-signup {
     font-size: 18px;
     font-family: Helvetica;
@@ -157,14 +128,13 @@ font-family: Helvetica;
 .img-fluid {
     border-radius: 40px;
     margin: 10px;
-    /* height: 80%;
-    width: 80%;
-    float: left; */
 }  
+
 .navbar-brand {
     font-family: 'Varela Round', sans-serif;
     font-size: 2rem;
 }
+
 .nav-link {
     font-family: 'Varela Round', sans-serif;
     font-size: 18px;
@@ -175,7 +145,7 @@ font-family: Helvetica;
     width: 100%;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 550px) {
     .img-fluid {
         float: left;
         height: 200px;
@@ -184,20 +154,19 @@ font-family: Helvetica;
     .float-right {
         float: right;
     }
-
-
-    /* body {
-        background-color: lightblue;
-      } */
-}
-/* @media only screen and (max-width: 600px) {
-    body {
-      background-color: lightblue;
+    h3 {
+        font-size: 20px;
     }
-  } */
-
-  @media only screen and (max-width: 768px) {
-h3 {
-     font-size: 20px;
 }
-  }
+
+@media only screen and (max-width: 551px) {
+
+    .img-fluid {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h3 {
+        font-size: 18px;
+    }
+}
