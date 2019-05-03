@@ -1,6 +1,8 @@
     let db = require("../models");
 const authController = require('../controllers/authcontroller.js');
 
+var Session;
+
 
 module.exports = function (app, passport) {
     // Gets user information based on id param    
@@ -41,8 +43,55 @@ module.exports = function (app, passport) {
 
     //Takes user registration info and sends to "/api/Users" and "/api/Mentors" routes (passport/bcrypt version)
 
+
+
+    app.post('/signup', passport.authenticate('local-signup', {
+        successRedirect: '/dashboard',
+
+        failureRedirect: '/signup'
+    }
+
+));
+
+
+/* app.get('/dashboard', isLoggedIn, function(req,res){
+    console.log("authControllerRedirect");
+    res.redirect('/index.html');
+    res.end();
+}); */
+
+
+
+app.get('/logout', authController.logout);
+
+app.post('/signin', passport.authenticate('local-signin'), function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    if(!req.user){
+    console.log(req.user)
+    res.send(JSON.stringify({ url: '/login.html' }));
+    }else{
+    Session = req.user;
+    console.log(req.user)
+    res.send(JSON.stringify({ url: '/loggedIn.html' }));
+    }
+});
+
+app.get('/console', function(req, res){res.send(Session)});
+
+
+/* function isLoggedIn(req, res, next) {
+
+    if (req.isAuthenticated())
+
+        return next();
+
+    res.redirect('/index');
+
+} */
+
+
     // app.post('/api/Users', (req, res) => console.log('here', req.body))
-    app.post('/api/Users', passport.authenticate('local-signup', {
+/*     app.post('/api/Users', passport.authenticate('local-signup', {
         successRedirect: '/login',
         failureRedirect: '/index'
     }
@@ -50,7 +99,15 @@ module.exports = function (app, passport) {
 
 
 
-    app.get('/redir1', isLoggedIn);
+app.get('/index', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    if(!req.user){
+    res.send(JSON.stringify({ url: '/login.html' }));
+    }else{
+    res.send(JSON.stringify({ url: '/loggedIn.html' }));
+    }
+});
+
 
 
     app.get('/logout', authController.logout);
@@ -80,6 +137,6 @@ function sendindex(){
         }
     }
 
-
+*/
 }
 
