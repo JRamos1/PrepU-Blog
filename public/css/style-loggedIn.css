@@ -71,6 +71,11 @@ a {
     padding: 20px;
 }   
 
+#contact-us{
+    text-align: center;
+    color:#1AAB8A;
+}
+
 /* Jumbotron overlay*/
 .overlay {
     padding-top: 10px;
@@ -146,18 +151,18 @@ h5 {
 }
 
 .logged-in {
-position: absolute;
-top: 20%;
+position: relative;
+top: -10px;
 left: 50%;
-transform: translate(-50%, -50%);
-font-size: 3vh;
+transform: translate(-20%, -30%);
+font-size:2vw;
 width: 100%;
-border-top:-10px;
+margin-top:-20%;
 text-align: center;
 }
 
 #searchPageImg {
-    margin-top: 80px;
+    margin-top: 40px;
     width: 100%;
 }
 
@@ -165,35 +170,55 @@ text-align: center;
     width: 50%;
     text-align: center; 
     border-radius: 100px;
-    font-size: 20px;
+    font-size: 2vw;
 }
 
-footer {
+#footer {
     bottom: 0;
     text-align: center;
     background-color: #000;
     color: white;
     font-size: 10px;
-    padding-bottom: 30px;
     width: 100%;
-    position: relative;
+    position: absolute;
 
 }
 
-@media only screen and (min-width: 700px) {
-    .img-fluid {
-        float: left;
-        height: 200px;
-        width: 250px;
-    }
-    .float-right {
-        float: right;
-    }
-}
 
-@media only screen and (max-width: 768px) {
-    h3 {
-        font-size: 20px;
-    }
-    
+
+#create-btn{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:40px;
+  /* font-size:1.5em; */
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+#create-btn:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+#create-btn:before,#create-btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+#create-btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+#create-btn:hover:before,#create-btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
 }
