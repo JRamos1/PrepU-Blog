@@ -3,7 +3,7 @@ html {
 }
 body {
     position: :relative;
-    color: #ffffff;
+    color: #000000;
 }
 * {
     font-family: Helvetica;
@@ -151,4 +151,7 @@ footer {
 #create-btn:hover:before,#create-btn:hover:after{
   width:100%;
   transition:800ms ease all;
+}
+.dark-text {
+    color: #000000;
 }
