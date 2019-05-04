@@ -55,6 +55,20 @@ module.exports = function(sequelize, Datatypes){
             }
         },
 
+        profession:{
+            type: Datatypes.STRING,
+            allowNull: true
+        },
+
+        school:{
+            type:Datatypes.STRING,
+            allowNull:true
+        },
+        interests:{
+            type:Datatypes.STRING,
+            allowNull:true
+        }
+
         
     });
 

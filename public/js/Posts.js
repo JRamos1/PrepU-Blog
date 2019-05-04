@@ -101,14 +101,15 @@ $(document).ready(function(){
           // If we're updating a post run updatePost to update a post
           // Otherwise run submitPost to create a whole new post
             submitUserData(newUser);
-            // console.log(newUser)
+            
           }
         );
       
         // Submits a new post and brings user to blog page upon completion
         function submitUserData(User) {
           console.log(User)
-          $.post("/signup", User , function() {
+          $.post("/signup", User , function(req,res) {
+            window.location.href = req.url
           });
         }
 
@@ -201,7 +202,7 @@ $(document).ready(function(){
       $(postSearch).on("submit",function handleFormSubmit(event){
         event.preventDefault();
         console.log("searching")
-        
+        $("#accordion").empty()
 
         let postTopic = $("#topicSearch").val()
         console.log(postTopic)
@@ -213,15 +214,71 @@ $(document).ready(function(){
           // console.log(data)  
           // console.log(data[0].User.firstName + " " + data[0].User.lastName)
           
-          let limit = 1;
+          let limit = 3;
           for(let i =0; i<limit; i++){
             let title = data[i].title
             console.log(data[i].title)
             let description = data[i].description
-            let entry = data[i].entry
+            let entry = data[i].entry;
+            let user= data[i].User;
+            let author = user.firstName + " " + user.lastName
+            console.log(user);
+            console.log(user.firstName);
+
+
+
+         let myscript = '<div class="card text-left "><div class="card-header" id="headingOne">';
+             myscript += '<h1 class="mb-0"><button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"';
+             myscript += 'aria-expanded="true" aria-controls="collapseOne">'
+             myscript +=            title + " "
+             myscript +=           '<a href ="/profile2" class="text-dark" id="newProfile">'
+             myscript +=             author
+             myscript +=           '</a>'                     
+             myscript +=          '</button>'
+             myscript +=        '</h1>'
+             myscript +=      '</div>'   
+             myscript +=      '<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">'
+             myscript +=       ' <div class="card-body">'
+             myscript +=         '<p class ="font-weight-bold">'
+             myscript +=          description
+             myscript +=            '</p>'
+             myscript +=            '<p>'
+             myscript +=            entry
+             myscript +=           '</p>'
+             myscript +=        '</div>'
+             myscript +=       '</div>'
+             myscript +=    '</div>'
+             console.log(myscript)
+
+             $("#accordion").append(myscript)
             
           }
         })
-        
+
 
       })
+
+      let editProfile = $("#editProfile")
+
+      $(editProfile).on("submit", function handleFormSubmit(event){
+        event.preventDefault();
+
+        let profession = $("#professionInput").val()
+        let school = $("#schoolInput").val()
+        let interests = $("#interestsInput").val()
+
+        let update = {
+          profession: profession,
+          school:school,
+          interests:interests
+        }
+
+        updateprofile(update)
+
+      })
+
+      updateprofile = function(object){
+        $.put("/api/users/", object, function(){
+
+        })
+      }

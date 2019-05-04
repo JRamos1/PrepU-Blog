@@ -6,15 +6,42 @@ var Session;
 
 module.exports = function (app, passport) {
 
-    app.get("/api/Users", function(req,res){
+
+    app.get("/api/users/:firstName",function(req,res){
         db.User.findAll({
+            where:{
+                firstName: req.params.firstName
+            },
             include:[{
-                model: db.Post
+                model:db.Post
             }]
-        }).then(function(data){
+        })
+        .then(function(data){
             res.json(data)
         })
     })
+
+    app.get("api/users/:id",function(req,res){
+        db.User.findAll({
+            where: {
+                id: req.user.id
+            }
+        })
+    })
+
+    app.put("/api/users", function(req, res) {
+        db.User.update(req.user,
+          {
+            where: {
+              id: req.user.id
+            }
+          })
+          .then(function(data) {
+            res.json(data);
+          });
+      });
+
+    
     // Gets user information based on id param    
     app.get("/api/Users/:id", function (req, res) {
         db.User.findAll({
@@ -25,6 +52,20 @@ module.exports = function (app, passport) {
             res.json(results)
         });
     });
+
+    
+
+
+    app.get("/api/users",function(req,res){
+        db.User.findAll({
+            include:[{
+                model:db.Post
+            }]
+        })
+        .then(function(data){
+            res.json(data)
+        })
+    })
 
     app.get('/api/posts/:topic', function(req,res){
         db.Post.findAll({
@@ -93,20 +134,20 @@ module.exports = function (app, passport) {
 
 
 
-    app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/signin',
+    app.post('/signup', passport.authenticate('local-signup'),function(req,res) {
 
-        failureRedirect: '/signup'
-    }
+        res.setHeader('Content-Type', 'application/json');
+        // if(!req.user){
+        // console.log(req.user)
+        // res.send(JSON.stringify({ url: '/login.html' }));
+        // }else{
+        // Session = req.user;
+        
+        res.send(JSON.stringify({ url: '/login.html' }));
+        }
 
-));
+);
 
-
-/* app.get('/dashboard', isLoggedIn, function(req,res){
-    console.log("authControllerRedirect");
-    res.redirect('/index.html');
-    res.end();
-}); */
 
 
 
