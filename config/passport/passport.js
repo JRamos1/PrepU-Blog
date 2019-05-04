@@ -4,7 +4,7 @@
  var passport = require('passport')
 
 
-//  module.exports = function(passport){
+ module.exports = function(passport){
 
  // var User = user;
  var LocalStrategy = require('passport-local').Strategy;
@@ -19,7 +19,7 @@
  passport.deserializeUser(function(id, done) {
      User.findOne({where: {id:id}}).then(function(user) {
        if(user){
-         console.log("herer", user.get())
+         console.log("herer")
          return done(null, user.get());
        }
        else{
@@ -65,7 +65,6 @@ console.log('testing' + emailTaken)
 
 console.log('test2', data)
        User.create(data).then(function(newUser,created){
-         console.log('created', created)
          if(!newUser){
            return done(null,false);
          }
@@ -109,7 +108,7 @@ console.log('test2', data)
      return bCrypt.compareSync(password, userpass);
    }
    User.findOne({ where : { email: email}}).then(function (user) {
-     console.log(user);
+     //console.log(user);
 
      if (!user) {
        console.log("Email does not exist")
@@ -124,7 +123,6 @@ console.log('test2', data)
 
      }
 
-     //var userinfo = user.get();
      console.log(user);
 
      return done(null,user);
@@ -141,5 +139,4 @@ console.log('test2', data)
  }
  ));
 
-//  }
-module.exports = passport;
+ }

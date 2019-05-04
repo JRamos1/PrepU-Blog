@@ -1,8 +1,5 @@
 $(document).ready(function(){
-
-  
-
-      $(document).ready(function() {
+  $.ajaxSetup({xhrFields: { withCredentials: true } });
         // Gets an optional query string from our url (i.e. ?post_id=23)
         var url = window.location.search;
         var postId;
@@ -111,10 +108,9 @@ $(document).ready(function(){
         // Submits a new post and brings user to blog page upon completion
         function submitUserData(User) {
           console.log(User)
-          $.post("/api/Users", User , function() {
+          $.post("/signup", User , function() {
           });
         }
-      })
 
       let signin = $("#signin")
         
@@ -152,13 +148,17 @@ $(document).ready(function(){
         // Submits a new post and brings user to blog page upon completion
         function submitUserSignin(checkSignin) {
           console.log(checkSignin)
-          $.post("/login", checkSignin , function() {
+          $.post("/signin", checkSignin , function(req, res) {
+            window.location.href=req.url
           });
         }
       })
         // Gets post data for a post if we're editing
-      
-       
-
-
+      if(window.location.href == '/console'){
+        console.log("definitelyHere")
+       $.get('/console', function(req, res){
+         var session2 = req.datavalues.id;
+         console.log("100xHere" , session2);
+       })
+      }
   //localstorage.getItem("currUser")

@@ -13,17 +13,17 @@ exports.mentorRegister = function(req,res){
 
 } */
 
-exports.index = function(req,res){
+/* exports.dashboard = function(req,res){
   console.log("authControllerRedirect");
+  res.writeHead(307, { Location: '/index' });
+  res.end();
 
-	res.redirect('/index'); 
-
-}
+} */
 
 exports.logout = function(req,res){
 
   req.session.destroy(function(err) {
-  res.redirect('/');
+  return res.redirect('/');
   });
 
 }
