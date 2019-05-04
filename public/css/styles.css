@@ -48,6 +48,12 @@ a {
     color: #ffffff;
 }
 
+.in-text-signup{
+    color: #000;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 .navbar {
     background-color: #000;
     padding-top: 0px;
