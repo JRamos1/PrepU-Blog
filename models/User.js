@@ -55,7 +55,25 @@ module.exports = function(sequelize, Datatypes){
             }
         },
 
+        profession:{
+            type: Datatypes.STRING,
+            allowNull: true
+        },
+
+        school:{
+            type:Datatypes.STRING,
+            allowNull:true
+        },
+        interests:{
+            type:Datatypes.STRING,
+            allowNull:true
+        }
+
         
     });
+
+    User.associate = function(models){
+        User.hasMany(models.Post)
+    }
     return User
 };

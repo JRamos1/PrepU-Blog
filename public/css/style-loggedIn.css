@@ -1,48 +1,11 @@
 html {
     min-height: 100%;
-    position: relative;
 }
-
+body {
+    color: #000000;
+}
 * {
     font-family: Helvetica;
-}
-
-/* Centered text in header*/
-.centered {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3vh;
-    width: 100%;
-    border-top:-10px;
-    text-align: center;
-}
-
-.slow-entrance{
-    -webkit-animation: mymove 3s ; /* Safari 4.0 - 8.0 */
-    -webkit-animation-delay: 5s; /* Safari 4.0 - 8.0 */
-    animation: mymove 10s ;
-    animation-delay: 1s;
-}
-
-@-webkit-keyframes mymove {
-    from {left: 100px;}
-    to {left: 200px;}
-}
-  
-@keyframes mymove {
-    from {top: 100px;}
-    to {bottom: 200px;}
-}
-
-
-/* Campus front page image*/
-#frontImg {
-    width:100%; 
-    border-radius:10px;
-    -webkit-filter: brightness(0.50);
-    filter: brightness(0.50);
 }
 
 a {
@@ -75,16 +38,6 @@ a {
     text-align: center;
     color:#1AAB8A;
 }
-
-/* Jumbotron overlay*/
-.overlay {
-    padding-top: 10px;
-    padding-bottom: 2px;
-    font-family: Helvetica;
-    color: aliceblue;
-    font-size: 30px;
-}
-
 h4 {
     font-size: 28px;
     font-family: Helvetica;
@@ -100,12 +53,6 @@ h5 {
     font-family: Helvetica;
 }
 
-#infoContent {
-    font-size: 1rem;
-    text-align: center;
-    font-family: Helvetica;
-}
-
 .card-img-top {
     width: 80%;
     text-align: center;
@@ -113,22 +60,6 @@ h5 {
 
 .card{
     text-align: center;
-}
-
-#about-us {
-    font-size: 1rem;
-    font-family: Helvetica;
-    color: #000000;
-    text-align: left;
-}
-
-
-#about-us-signup {
-    font-size: 18px;
-    font-family: Helvetica;
-    color: #000000;
-    font-weight: bold;
-    text-decoration: underline;
 }
 
 .img-fluid {
@@ -162,7 +93,7 @@ text-align: center;
 }
 
 #searchPageImg {
-    margin-top: 40px;
+    margin-top: 65px;
     width: 100%;
 }
 
@@ -172,19 +103,17 @@ text-align: center;
     border-radius: 100px;
     font-size: 2vw;
 }
-
-#footer {
+footer {
     bottom: 0;
     text-align: center;
     background-color: #000;
     color: white;
-    font-size: 10px;
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-top:5px;
     width: 100%;
-    position: absolute;
 
 }
-
-
 
 #create-btn{
   background:#1AAB8A;
@@ -221,4 +150,14 @@ text-align: center;
 #create-btn:hover:before,#create-btn:hover:after{
   width:100%;
   transition:800ms ease all;
+}
+.dark-text {
+    color: #000000;
+}
+
+.btn-link {
+    color: #000000 !important;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none !important;
 }
