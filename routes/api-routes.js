@@ -45,13 +45,17 @@ module.exports = function (app, passport) {
 
 
 
-    app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/dashboard',
-
-        failureRedirect: '/signup'
-    }
-
-));
+    app.post('/signup', passport.authenticate('local-signup'),  function (req, res) {
+       res.setHeader('Content-Type', 'application/json');
+        /*if(!req.newUser){
+        console.log(req.newUser)
+        res.send(JSON.stringify({ url: '/index.html' }));
+        }else{
+        Session = req.user;*/
+        console.log(req)
+        res.send(JSON.stringify({ url: '/login.html' }));
+        //}
+    });
 
 
 /* app.get('/dashboard', isLoggedIn, function(req,res){

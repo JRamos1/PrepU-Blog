@@ -108,7 +108,8 @@ $(document).ready(function(){
         // Submits a new post and brings user to blog page upon completion
         function submitUserData(User) {
           console.log(User)
-          $.post("/signup", User , function() {
+          $.post("/signup", User , function(req, res) {
+            window.location.href=req.url
           });
         }
 
