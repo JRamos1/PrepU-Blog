@@ -69,14 +69,15 @@ footer {
     text-align: center;
     background-color: #000;
     color: white;
-    font-size: 10px;
-    padding-bottom: 30px;
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-top:5px;
 }
 
 /* Contact us icon links*/
 .icons {
-    font-size: 20px;
-    padding: 20px;
+    font-size: 15px;
+    padding: 10px;
 }
 
 h4 {
