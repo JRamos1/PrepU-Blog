@@ -30,14 +30,14 @@
     <div id="navb" class="navbar-collapse collapse hide">
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/profile" data-toggle="modal" data-target="#profile">My Profile 
-            </a>
+          <a class="nav-link" href="/profile" data-toggle="modal" data-target="#profile">My Profile
+          </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#editProfile" data-toggle="modal" data-target="#editProfile">Edit Profile 
-              </a>
-          </li>
-       
+          <a class="nav-link" href="#editProfile" data-toggle="modal" data-target="#editProfile">Edit Profile
+          </a>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="/" id="endSession">Logout</a>
         </li>
@@ -88,51 +88,99 @@
     </div>
   </form>
 
-  
+
   <div class="container"></div>
 
   <!-- Header -->
   <img src="./css/loggedInBg.jpg" class="responsiveApple" alt="chalkboard" id="searchPageImg">
 
   <div class="container">
-
-    <div class="row">  </div>
-      <div class="logged-in row"> 
-        <div class="col-lg-8 col-md-10 col-sm-12">
+    <div class="row"> </div>
+    <div class="logged-in row">
+      <div class="col-lg-8 col-md-10 col-sm-12">
         <p style="color:#ffffff"> Search for a blog post: </p>
         <form>
-              <input type="text" class="searchbar" id="termSearch" placeholder="Find a blog post...">  <button class="btn btn-light btn-sm" id="submitSearch" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              <p style="color:#ffffff"> or </p>
-                <button id="create-btn">Create your own blog post! </button>
-              </form>
+          <input type="text" class="searchbar" id="termSearch" placeholder="Find a blog post..."> <button
+            class="btn btn-light btn-sm" id="submitSearch" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+          <p style="color:#ffffff"> or </p>
+          <button id="create-btn" ><a href="#createPost"
+              data-toggle="modal" data-target="#createPost">Create your own blog post!
+            </a> </button>
 
+        </form>
       </div>
-
+    </div>
   </div>
 
-  </div>
+  <!-- Modal to create blog post -->
+  <form class="modal fade form-group" id="createPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
 
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Create a Blog Post!</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body mx-3">
+          <div class="md-form mb-4">
+            <label data-error="wrong" data-success="right" for="postTitle">Title</label>
+            <input type="text" id="postTitle" class="form-control validate">
+
+          </div>
+
+          <div class="md-form mb-4">
+            <label data-error="wrong" data-success="right" for="postTopic">Topic of your post</label>
+            <input type="text" id="postTopic" class="form-control validate">
+
+          </div>
+
+          <div class="md-form mb-4">
+            <label data-error="wrong" data-success="right" for="postDescription">Describe your post</label>
+            <input type="text" id="postDescription" class="form-control validate">
+
+          </div>
+
+          <div class="md-form mb-4">
+            <label data-error="wrong" data-success="right" for="postBody">Enter your post here:</label>
+            <textarea class="form-control" id="postBody" rows="3"></textarea>
+
+          </div>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn btn-success" type="submit">Create Blog Post</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+  <!-- Blog Section -->
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-  
-          <h3>BLOG SECTION</h3>
-          <form>
-            Title:
-            <input type="text" name="title">
+
+        <h3>BLOG SECTION</h3>
+        <form>
+          Title:
+          <input type="text" name="title">
           </br>
-            Author:
-            <input type="text" name="author">
-        </br>
-            Post:
-            <input type="text" name="post">
-          </form>
-  
-  
+          Author:
+          <input type="text" name="author">
+          </br>
+          Post:
+          <input type="text" name="post">
+        </form>
+
+
       </div>
-  
+
     </div>
   </div>
 
@@ -163,12 +211,13 @@
     <!-- Link icons -->
     <div class="container-fluid icons" id="footer">
       <div clas="row">
-        <h5 class="col-lg-12" id="contact-us">  CONTACT US:</h5>
-          <a href="#" class="col-lg-4"> hello@prepyou.com  <i class="fa fa-envelope"></i></a>
-          <a class="col-lg-4">212-XXX-XXXX <i class="fa fa-phone"></i></a>
+        <h5 class="col-lg-12" id="contact-us"> CONTACT US:</h5>
+        <a href="#" class="col-lg-4"> hello@prepyou.com <i class="fa fa-envelope"></i></a>
+        <a class="col-lg-4">212-XXX-XXXX <i class="fa fa-phone"></i></a>
         <a href="https://www.facebook.com/" class="col-lg-4">Facebook <i class="fa fa-facebook"></i></a>
         <a href="https://github.com/JRamos1/Project-2-Group-6" class="col-lg-4"> GitHub <i class="fa fa-github"></i></a>
-        <a href="https://www.google.com/maps/place/Columbia+University+-+Department+of+Mechanical+Engineering/@40.8094069,-73.9620959,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2f63fdaf99973:0x327775494db8e463!8m2!3d40.8094069!4d-73.9599072" class="col-lg-4">Columbia University <i class="fa fa-map"></i></a>
+        <a href="https://www.google.com/maps/place/Columbia+University+-+Department+of+Mechanical+Engineering/@40.8094069,-73.9620959,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2f63fdaf99973:0x327775494db8e463!8m2!3d40.8094069!4d-73.9599072"
+          class="col-lg-4">Columbia University <i class="fa fa-map"></i></a>
 
       </div>
     </div>
