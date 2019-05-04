@@ -14,7 +14,8 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
   <!-- Favicon -->
   <link rel="icon" href="css/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <!-- Link to stylesheets-->
+  <link rel="stylesheet" href="css/style-loggedIn.css" media="screen" title="no title">
 </head>
 
 <body>
@@ -25,7 +26,7 @@
       aria-expanded="true">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <!-- Sign up/login links-->
+    <!-- User logged in links-->
     <div id="navb" class="navbar-collapse collapse hide">
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
@@ -43,7 +44,7 @@
       </ul>
     </div>
   </nav>
-  <!-- Modal for student sign up -->
+  <!-- Modal for navbar links when user is logged in -->
   <form class="modal fade form-group" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -86,160 +87,94 @@
       </div>
     </div>
   </form>
-  <!-- Modal for mentor sign up -->
+
   
   <div class="container"></div>
 
   <!-- Header -->
-  <img src="./css/background.jpg" alt="columbia campus" id="frontImg">
+  <img src="./css/loggedInBg.jpg" class="responsiveApple" alt="chalkboard" id="searchPageImg">
 
   <div class="container">
 
-    <div class="row slow-">
-      <div class="overlay centered slow-entrance"> Finding the right career path is hard, but you are not on your own!
-        </br> Join our student mentoring community today!</div>
-    </div>
+    <div class="row">  </div>
+      <div class="logged-in row"> 
+        <div class="col-lg-8 col-md-10 col-sm-12">
+        <p style="color:#ffffff"> Search for a blog post: </p>
+        <form>
+              <input type="text" class="searchbar" id="termSearch" placeholder="Find a blog post...">  <button class="btn btn-light btn-sm" id="submitSearch" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              <p style="color:#ffffff"> or </p>
+                <button id="create-btn">Create your own blog post! </button>
+              </form>
+
+      </div>
 
   </div>
 
+  </div>
 
-  <div class="container divder"></div>
-
-  <!-- About -->
-  <div class="about-section text-center jumbotron">
-    <div class="container">
-
-      <div class="row">
-
-        <div>
-          <img class="img-fluid" src="./css/meetingMentor.jpeg" alt="student meeting mentor">
-
-          <!-- </div> -->
-          <!-- <div class="col-lg-8 col-md-8 mx-auto"> -->
-          <p class="text-black mb-1mx-auto" style="font-size: 5vw">
-            <h3>
-              What is Prep U?
-            </h3>
-            <p class="text-white-50" id="about-us"> Prep U is a community of ambitious young students and professionals
-              that are looking to connect with Alumni to gather information and exchange idea on what school and program
-              can help them best prepare them to their future and dream career.
-              </br>
-              Let us know your interests, ambitions and goals and our team of experts will match you with alumni and
-              young professionals whom have degrees or are currently working in that field.</p>
-          </p>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+  
+          <h3>BLOG SECTION</h3>
+          <form>
+            Title:
+            <input type="text" name="title">
+          </br>
+            Author:
+            <input type="text" name="author">
+        </br>
+            Post:
+            <input type="text" name="post">
+          </form>
+  
+  
       </div>
-
-      <br>
-
-      <div class="row">
-
-
-        <div>
-            <img src="./css/Grad-hats.jpg" class="img-fluid float-right" alt="student meeting mentor">
-            <p class="text-black mb-1mx-auto" style="font-size: 5vw">
-          <h3>
-            I am a HS student or I am thinking about Grad School: Help!
-          </h3>
-          <p class="text-white-50" id="about-us"> Prep U wants to help you making the right choices for your future. We
-            will pair you with someone who has been in your shoe. "I want to work in consulting. Is this school right
-            for me?", "I am thinking about going to law school. Is it worth it?"
-            </br>
-            Our alumni & young professional community will help you think this through. They will tell you their
-            experience, pros and cons about the school they sent to and what helped succeed in the field their are in.
-            <a href="#studentRegister" data-toggle="modal" data-target="#studentRegister" id="about-us-signup"> SIGN
-              UP</a> </p>
-
-
-          </p>
-
-
-        </div>
-      </div>
-
-      <br>
-
-      <div class="row">
-
-        <div>
-          <img class="img-fluid" src="./css/guidance.jpg" alt="student meeting mentor">
-
-          <p class="text-black mb-1mx-auto" style="font-size: 5vw">
-            <h3>
-              I graduated and would love to mentor the new generation!
-            </h3>
-            <p class="text-white-50" id="about-us"> Prep U will give you the opportunity to help, guide and mentor the
-              new generation. We will pair you with a student that is thinking about going to the school you went, wants
-              to follow similar career path or has similar interests.
-              </br>
-              You will be able to share your experience, lesson learned and advices from your successful journey, and
-              help them make the right choices so they can achieve their goals! <a href="#mentorRegister"
-                data-toggle="modal" data-target="#mentorRegister" id="about-us-signup"> SIGN UP </a></p>
-            </p>
-        </div>
-      </div>
-
+  
     </div>
   </div>
 
-  <div class="container divder"></div>
 
-  <!-- Informational cards -->
-  <div class="container-fluid card-group">
-    <div class="card col-sm-12">
-      <img src="css/education.jpg" class="card-img-top rounded-circle mx-auto d-block" alt="education">
-      <div class="card-body">
-        <h5 class="card-title">Getting into the College of your Dreams</h5>
-        <p class="card-text" id="infoContent">This card has supporting text below as a natural lead-in to additional
-          content.</p>
-      </div>
-    </div>
-    <div class="card col-sm-12 ">
-      <img src="css/graduate.jpeg" class="card-img-top rounded-circle mx-auto d-block" alt="graduate">
-      <div class="card-body">
-        <h5 class="card-title">What happens after Graduation?</h5>
-        <p class="card-text" id="infoContent">This is a wider card with supporting text below as a natural lead-in to
-          additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-    <div class="card col-sm-12">
-      <img src="css/book.jpg" class="card-img-top rounded-circle mx-auto d-block" alt="books">
-      <div class="card-body">
-        <h5 class="card-title">Giving Back</h5>
-        <p class="card-text" id="infoContent"> You have the possibility to guide a student that is looking to follow
-          your same or similar academic or career path </p>
-      </div>
-    </div>
-  </div>
+  <div class="container divider"></div>
+
+  <!-- Blogs populated from searchbar -->
 
   <!-- Footer -->
-  <footer>
-    <!-- Contact Us -->
-    <div class="card-group">
-      <div class="card-body  text-center">
+  <div>
+    <!-- <div id="footer" class="container">
+      <div class="text-center row">
+        <div class="col-lg-4 col-md-4">
+
         <h5 class="card-title"><i class="fa fa-envelope" aria-hidden="true"></i></h5>
         <p class="card-text">Contact us by E-mail! <br>hello@prepyou.com</p>
+        </div>
       </div>
-      <div class="card-body  text-center">
+      <div class="text-center">
         <h5 class="card-title"><i class="fa fa-map" aria-hidden="true"></i></h5>
         <p class="card-text">Seeley W. Mudd Building <br>500 W 120th St<br> New York, NY 10027</p>
       </div>
-      <div class="card-body  text-center">
+      <div class="text-center">
         <h5 class="card-title"><i class="fa fa-phone" aria-hidden="true"></i></h5>
         <p class="card-text">Contact us by Phone! <br> XXX-XXX-XXXX</p>
       </div>
-    </div>
+    </div> -->
     <!-- Link icons -->
-    <div class="container-fluid icons">
+    <div class="container-fluid icons" id="footer">
       <div clas="row">
-        <a href="#" class="col-lg-4"><i class="fa fa-facebook"></i></a>
-        <a href="#" class="col-lg-4"><i class="fa fa-twitter"></i></a>
-        <a href="#" class="col-lg-4"><i class="fa fa-github"></i></a>
+        <h5 class="col-lg-12" id="contact-us">  CONTACT US:</h5>
+          <a href="#" class="col-lg-4"> hello@prepyou.com  <i class="fa fa-envelope"></i></a>
+          <a class="col-lg-4">212-XXX-XXXX <i class="fa fa-phone"></i></a>
+        <a href="https://www.facebook.com/" class="col-lg-4">Facebook <i class="fa fa-facebook"></i></a>
+        <a href="https://github.com/JRamos1/Project-2-Group-6" class="col-lg-4"> GitHub <i class="fa fa-github"></i></a>
+        <a href="https://www.google.com/maps/place/Columbia+University+-+Department+of+Mechanical+Engineering/@40.8094069,-73.9620959,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2f63fdaf99973:0x327775494db8e463!8m2!3d40.8094069!4d-73.9599072" class="col-lg-4">Columbia University <i class="fa fa-map"></i></a>
+
       </div>
     </div>
     <!-- Copyright -->
-    <div class="container-fluid">Project-2-Group-6 &copy; 2019</div>
-  </footer>
+    <div class="container-fluid" id="footer">Project-2-Group-6 &copy; 2019</div>
+  </div>
 
   <!-- Post script -->
   <script src="js/Posts.js"></script>
