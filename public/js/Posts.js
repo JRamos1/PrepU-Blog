@@ -219,7 +219,7 @@ $(document).ready(function(){
             console.log(data[i].title)
             let description = data[i].description
             let entry = data[i].entry
-            console.log([i])
+            
           }
         })
         
