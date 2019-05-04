@@ -95,21 +95,21 @@
   <img src="./css/loggedInBg.jpg" class="responsiveApple" alt="chalkboard" id="searchPageImg">
 
   <div class="container">
-    <div class="row"> </div>
+    <!-- <div class="row"> </div> -->
     <div class="logged-in row">
       <div class="col-lg-8 col-md-10 col-sm-12">
-        <p style="color:#ffffff"> Search for a blog post: </p>
+      Search for a blog post: <br><br>
         <form>
-          <input type="text" class="searchbar" id="termSearch" placeholder="Find a blog post..."> <button
-            class="btn btn-light btn-sm" id="submitSearch" type="button">
-            <i class="fa fa-search"></i>
-          </button>
-          <p style="color:#ffffff"> or </p>
+          <input type="text" class="searchbar" id="termSearch" placeholder="Find a blog post..."> 
+          <button class="btn btn-light btn-sm" id="submitSearch" type="button">
+            <i class="fa fa-search"></i> </button><br><br>
+          </form>
+
           <button id="create-btn" ><a href="#createPost"
               data-toggle="modal" data-target="#createPost">Create your own blog post!
             </a> </button>
 
-        </form>
+       
       </div>
     </div>
   </div>
@@ -161,70 +161,39 @@
   </form>
 
 
-  <!-- Blog Section -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10">
-
-        <h3>BLOG SECTION</h3>
-        <form>
-          Title:
-          <input type="text" name="title">
-          </br>
-          Author:
-          <input type="text" name="author">
-          </br>
-          Post:
-          <input type="text" name="post">
-        </form>
-
-
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="container divider"></div>
+  <div class="container divder"></div>
+  <div class="container divder"></div>
 
   <!-- Blogs populated from searchbar -->
 
   <!-- Footer -->
-  <div>
-    <!-- <div id="footer" class="container">
-      <div class="text-center row">
-        <div class="col-lg-4 col-md-4">
-
-        <h5 class="card-title"><i class="fa fa-envelope" aria-hidden="true"></i></h5>
-        <p class="card-text">Contact us by E-mail! <br>hello@prepyou.com</p>
+<footer>
+    <div class="container">
+      <div clas="row">
+        CONTACT US:
+      </div><br>
+  
+      <div class="row">
+        <div class="col-sm">
+          <i class="fa fa-envelope"></i> hello@prepyou.com
+        </div><br><br>
+        <div class="col-sm">
+          <a href="https://www.facebook.com/" class="icons"><i class="fa fa-facebook"></i></a>
+          <a href="https://github.com/JRamos1/Project-2-Group-6" class="icons "><i class="fa fa-github"></i></a>
+          <a href="https://www.google.com/maps/place/Columbia+University+-+Department+of+Mechanical+Engineering/@40.8094069,-73.9620959,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2f63fdaf99973:0x327775494db8e463!8m2!3d40.8094069!4d-73.9599072" class="icons"><i class="fa fa-map"></i></a>
+        </div><br><br>
+        <div class="col-sm">
+          <i class="fa fa-phone"></i> 212-XXX-XXXX
         </div>
       </div>
-      <div class="text-center">
-        <h5 class="card-title"><i class="fa fa-map" aria-hidden="true"></i></h5>
-        <p class="card-text">Seeley W. Mudd Building <br>500 W 120th St<br> New York, NY 10027</p>
-      </div>
-      <div class="text-center">
-        <h5 class="card-title"><i class="fa fa-phone" aria-hidden="true"></i></h5>
-        <p class="card-text">Contact us by Phone! <br> XXX-XXX-XXXX</p>
-      </div>
-    </div> -->
-    <!-- Link icons -->
-    <div class="container-fluid icons" id="footer">
-      <div clas="row">
-        <h5 class="col-lg-12" id="contact-us"> CONTACT US:</h5>
-        <a href="#" class="col-lg-4"> hello@prepyou.com <i class="fa fa-envelope"></i></a>
-        <a class="col-lg-4">212-XXX-XXXX <i class="fa fa-phone"></i></a>
-        <a href="https://www.facebook.com/" class="col-lg-4">Facebook <i class="fa fa-facebook"></i></a>
-        <a href="https://github.com/JRamos1/Project-2-Group-6" class="col-lg-4"> GitHub <i class="fa fa-github"></i></a>
-        <a href="https://www.google.com/maps/place/Columbia+University+-+Department+of+Mechanical+Engineering/@40.8094069,-73.9620959,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2f63fdaf99973:0x327775494db8e463!8m2!3d40.8094069!4d-73.9599072"
-          class="col-lg-4">Columbia University <i class="fa fa-map"></i></a>
-
-      </div>
     </div>
+    <br>
+  
     <!-- Copyright -->
-    <div class="container-fluid" id="footer">Project-2-Group-6 &copy; 2019</div>
-  </div>
-
+    <div class="container-fluid">Project-2-Group-6 &copy; 2019</div>
+</footer>
+  
+  
   <!-- Post script -->
   <script src="js/Posts.js"></script>
 </body>
