@@ -1,10 +1,20 @@
-    let db = require("../models");
+let db = require("../models");
 const authController = require('../controllers/authcontroller.js');
 
 var Session;
 
 
 module.exports = function (app, passport) {
+
+    app.get("/api/Users", function(req,res){
+        db.User.findAll({
+            include:[{
+                model: db.Post
+            }]
+        }).then(function(data){
+            res.json(data)
+        })
+    })
     // Gets user information based on id param    
     app.get("/api/Users/:id", function (req, res) {
         db.User.findAll({
@@ -16,29 +26,54 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.get("/api/Posts/:id", function (req, res) {
-        db.Post.findAll({
-            where: {
-                id: req.params.id
-            }
+    app.post("/api/Posts", function(req,res){
+        db.Post.create({
+            title: req.body.title,
+            topic: req.body.topic,
+            description: req.body.description,
+            entry: req.body.entry,
+            UserId: req.user.id
+        })
+        .then(function(data){
+            res.json(data)
         })
     })
 
     app.get("/api/Posts", function (req, res) {
         console.log(req.body)
-        db.Post.findAll({}).then(function (results) {
+        db.Post.findAll({
+            include:[{
+                model:db.User
+            }]
+        }).then(function (results) {
 
             res.json(results)
         });
     });
+
+    app.post("/api/comment/:postId",function(req,res){
+        db.Comment.create({
+            comment: req.body.comment,
+            postId: req.params.postId,
+            userId: req.user.id,
+        })
+    })
+
+
+    app.get("/api/posts/:topic", function(){
+        db.Post.findAll({
+            where:{
+                topic:req.params.topic
+            }
+        })
+        .then(function(data){
+            res.json(data)
+        })
+    })
+
+
     // Get all posts by a user
-    app.get("/api/Users", function (req, res) {
-        console.log(req.body)
-        db.User.findAll({}).then(function (results) {
-
-            res.json(results)
-        });
-    });
+    
 
 
     //Takes user registration info and sends to "/api/Users" and "/api/Mentors" routes (passport/bcrypt version)
@@ -46,7 +81,7 @@ module.exports = function (app, passport) {
 
 
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/dashboard',
+        successRedirect: '/signin',
 
         failureRedirect: '/signup'
     }

@@ -161,4 +161,37 @@ $(document).ready(function(){
          console.log("100xHere" , session2);
        })
       }
-  //localstorage.getItem("currUser")
+      let sendPost = $("#createPost")
+
+
+      $(sendPost).on("submit", function handleFormSubmit(event){
+        event.preventDefault();
+
+        let postTitle = $("#postTitle").val().trim();
+        let postTopic =$("#postTopic").val().trim();
+        let postDescription =$("#postDescription").val().trim();
+        let postBody = $("#postBody").val().trim();
+
+
+        if(!postTitle || !postTopic || !postDescription || !postBody){
+          return;
+        }
+
+
+        let newPost = {
+          title: postTitle,
+          topic: postTopic,
+          description: postDescription,
+          entry: postBody
+        }
+        console.log(newPost)
+        submitNewPost(newPost)
+        
+      })
+     
+
+      function submitNewPost(Post){
+        $.post("/api/Posts", Post, function(){
+          window.location.href = "/profile"
+        })
+      }
