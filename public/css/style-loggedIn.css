@@ -112,7 +112,7 @@ footer {
     padding-bottom: 5px;
     padding-top:5px;
     width: 100%;
-    position: absolute;
+
 }
 
 #create-btn{
@@ -153,4 +153,11 @@ footer {
 }
 .dark-text {
     color: #000000;
+}
+
+.btn-link {
+    color: #000000 !important;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none !important;
 }
