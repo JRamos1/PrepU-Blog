@@ -26,6 +26,19 @@ module.exports = function (app, passport) {
         });
     });
 
+    app.get('/api/posts/:topic', function(req,res){
+        db.Post.findAll({
+            include:[{
+                model:db.User
+            }],
+            where:{
+                topic: req.params.topic
+            }
+        })
+        .then(function(data){
+            res.json(data)
+        })
+    })
     app.post("/api/Posts", function(req,res){
         db.Post.create({
             title: req.body.title,

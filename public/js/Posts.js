@@ -200,6 +200,28 @@ $(document).ready(function(){
 
       $(postSearch).on("submit",function handleFormSubmit(event){
         event.preventDefault();
+        console.log("searching")
+        
+
+        let postTopic = $("#topicSearch").val()
+        console.log(postTopic)
+        if(!postTopic){
+          return;
+        }
+
+        $.get("/api/posts/" + postTopic , function(data){
+          // console.log(data)  
+          // console.log(data[0].User.firstName + " " + data[0].User.lastName)
+          
+          let limit = 1;
+          for(let i =0; i<limit; i++){
+            let title = data[i].title
+            console.log(data[i].title)
+            let description = data[i].description
+            let entry = data[i].entry
+            console.log([i])
+          }
+        })
         
 
       })
