@@ -44,49 +44,37 @@
       </ul>
     </div>
   </nav>
-  <!-- Modal for navbar links when user is logged in -->
-  <form class="modal fade form-group" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">Edit Profile</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+  <!-- Modal for edit profile when user is logged in -->
+<form class="modal fade form-group" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Edit Profile</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-4">
+          <input type="text" id="professionInput" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="professionInput">Profession</label>
         </div>
-        <div class="modal-body mx-3">
-          <div class="md-form mb-4">
-            <input type="text" id="" class="form-control validate">
-            <label data-error="wrong" data-success="right" for=""></label>
-          </div>
-          <div class="md-form mb-4">
-            <input type="text" id="" class="form-control validate">
-            <label data-error="wrong" data-success="right" for=""></label>
-          </div>
-          <div class="md-form mb-4">
-            <input type="email" id="" class="form-control validate">
-            <label data-error="wrong" data-success="right" for=""></label>
-          </div>
-          <div class="md-form mb-4">
-            <input type="password" id="" class="form-control validate">
-            <label data-error="wrong" data-success="right" for=""></label>
-          </div>
-          <div class="md-form mb-4">
-            <input type="text" id="major" class="form-control validate">
-            <label data-error="wrong" data-success="right" for=""></label>
-          </div>
-          <div class="md-form mb-4">
-            <input type="text" id="" class="form-control validate">
-            <label data-error="wrong" data-success="right" for=""></label>
-          </div>
+        <div class="md-form mb-4">
+          <input type="text" id="schoolInput" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="schoolInput">School</label>
         </div>
-        <div class="modal-footer d-flex justify-content-center">
-          <button class="btn btn-deep-orange" type="submit">Update</button>
+        <div class="md-form mb-4">
+          <input type="email" id="interestInput" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="interestInput">Interests</label>
         </div>
       </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-deep-orange" type="submit">Update</button>
+      </div>
     </div>
-  </form>
+  </div>
+</form>
 
 
   <div class="container"></div>
@@ -97,7 +85,7 @@
   <div class="container">
     <!-- <div class="row"> </div> -->
     <div class="logged-in row">
-      <div class="col-lg-8 col-md-10 col-sm-12">
+      <div class="col-lg-8 col-md-10 col-sm-12" style="color: #ffffff">
       Search for a blog post: <br><br>
         <form>
           <input type="text" class="searchbar" id="termSearch" placeholder="Find a blog post..."> 
@@ -120,14 +108,14 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
 
-        <div class="modal-header text-center">
+        <div class="modal-header text-center dark-text">
           <h4 class="modal-title w-100 font-weight-bold">Create a Blog Post!</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
 
-        <div class="modal-body mx-3">
+        <div class="modal-body mx-3 dark-text">
           <div class="md-form mb-4">
             <label data-error="wrong" data-success="right" for="postTitle">Title</label>
             <input type="text" id="postTitle" class="form-control validate">
