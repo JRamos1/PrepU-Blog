@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 
     $("#getPosts").on("click",function(){
+            $("#accordion").empty()
     
     
     let userProfile = $("#userName").text().split(" ")
