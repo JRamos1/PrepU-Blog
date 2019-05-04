@@ -195,3 +195,11 @@ $(document).ready(function(){
           window.location.href = "/profile"
         })
       }
+
+      let postSearch = $("#postSearch")
+
+      $(postSearch).on("submit",function handleFormSubmit(event){
+        event.preventDefault();
+        
+
+      })
