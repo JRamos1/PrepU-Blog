@@ -2,20 +2,6 @@
     font-family: Helvetica;
 }
 
-/* .slow-entrance{
-    -webkit-animation: mymove 5s ; Safari 4.0 - 8.0 */
-    /* animation: mymove 5s ;
-}
-@-webkit-keyframes mymove {
-    from {top: 150px;}
-    to {top: 200px;}
-  }
-
-  @keyframes mymove {
-    from {top: 150px;}
-    to {top: 200px;}
-  } */
-/* Centered text in header*/
 .centered {
     position: absolute;
     left: 50%;
@@ -27,9 +13,11 @@
     top: 200px;
     font-family: 'Varela Round', sans-serif;
 }
+
 .fade-in {
     animation: fadeIn 5s;
 }
+
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -53,7 +41,6 @@ a {
     text-decoration: underline;
     font-weight: bold;
 }
-
 .navbar {
     background-color: #000;
     padding-top: 0px;
