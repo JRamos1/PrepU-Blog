@@ -45,59 +45,53 @@
     </div>
   </nav>
   <!-- Modal for edit profile when user is logged in -->
-<form class="modal fade form-group" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Edit Profile</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-4">
-          <input type="text" id="professionInput" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="professionInput">Profession</label>
+  <form class="modal fade form-group" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Profile</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <div class="md-form mb-4">
-          <input type="text" id="schoolInput" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="schoolInput">School</label>
+        <div class="modal-body mx-3">
+          <div class="md-form mb-4">
+            <input type="text" id="professionInput" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="professionInput">Profession</label>
+          </div>
+          <div class="md-form mb-4">
+            <input type="text" id="schoolInput" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="schoolInput">School</label>
+          </div>
+          <div class="md-form mb-4">
+            <input type="text" id="interestInput" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="interestInput">Interests</label>
+          </div>
         </div>
-        <div class="md-form mb-4">
-          <input type="text" id="interestInput" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="interestInput">Interests</label>
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn btn-deep-orange" type="submit">Update</button>
         </div>
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-deep-orange" type="submit">Update</button>
       </div>
     </div>
-  </div>
-</form>
-
+  </form>
 
   <div class="container"></div>
 
   <!-- Header -->
   <img src="./css/loggedInBg.jpg" class="responsiveApple" alt="chalkboard" id="searchPageImg">
-
   <div class="container">
-    <!-- <div class="row"> </div> -->
     <div class="logged-in row">
       <div class="col-lg-8 col-md-10 col-sm-12" style="color: #ffffff">
-      Search for a blog post: <br><br>
-        <form id ="postSearch">
-          <input type="text" class="searchbar" id="topicSearch" placeholder="Find a blog post..."> 
+        Search for a blog post: <br><br>
+        <form id="postSearch">
+          <input type="text" class="searchbar" id="topicSearch" placeholder="Find a blog post...">
           <button class="btn btn-light btn-sm" id="submitSearch" type="button submit">
             <i class="fa fa-search"></i> </button><br><br>
-          </form>
-
-          <button id="create-btn" ><a href="#createPost"
-              data-toggle="modal" data-target="#createPost">Create your own blog post!
-            </a> </button>
-
-       
+        </form>
+        <button id="create-btn">
+          <a href="#createPost" data-toggle="modal" data-target="#createPost">Create your own blog post!</a> 
+        </button>
       </div>
     </div>
   </div>
@@ -114,32 +108,23 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-
         <div class="modal-body mx-3 dark-text">
           <div class="md-form mb-4">
             <label data-error="wrong" data-success="right" for="postTitle">Title</label>
             <input type="text" id="postTitle" class="form-control validate">
-
           </div>
-
           <div class="md-form mb-4">
             <label data-error="wrong" data-success="right" for="postTopic">Topic of your post</label>
             <input type="text" id="postTopic" class="form-control validate">
-
           </div>
-
           <div class="md-form mb-4">
             <label data-error="wrong" data-success="right" for="postDescription">Describe your post</label>
             <input type="text" id="postDescription" class="form-control validate">
-
           </div>
-
           <div class="md-form mb-4">
             <label data-error="wrong" data-success="right" for="postBody">Enter your post here:</label>
             <textarea class="form-control" id="postBody" rows="3"></textarea>
-
           </div>
-
         </div>
         <div class="modal-footer d-flex justify-content-center">
           <button class="btn btn-success" type="submit">Create Blog Post</button>
@@ -149,50 +134,41 @@
   </form>
 
   <!-- Blog post populated with accordion -->
-<div id="accordion">
-  
- 
-</div>
-
-
+  <div id="accordion"></div>
 
   <div class="container divder"></div>
   <div class="container divder"></div>
-    
-
   <!-- Blogs populated from searchbar -->
 
   <!-- Footer -->
-<footer>
+  <footer>
     <div class="container">
       <div clas="row">
         CONTACT US:
-      </div><br>
-  
+      </div>
+      <br>
       <div class="row">
         <div class="col-sm">
           <i class="fa fa-envelope"></i> hello@prepu.com
-        </div><br><br>
+        </div>
+        <br><br>
         <div class="col-sm">
           <a href="https://www.facebook.com/" class="icons"><i class="fa fa-facebook"></i></a>
           <a href="https://github.com/JRamos1/Project-2-Group-6" class="icons "><i class="fa fa-github"></i></a>
           <a href="https://www.google.com/maps/place/Columbia+University+-+Department+of+Mechanical+Engineering/@40.8094069,-73.9620959,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2f63fdaf99973:0x327775494db8e463!8m2!3d40.8094069!4d-73.9599072" class="icons"><i class="fa fa-map"></i></a>
-        </div><br><br>
+        </div>
+        <br><br>
         <div class="col-sm">
           <i class="fa fa-phone"></i> 212-XXX-XXXX
         </div>
       </div>
     </div>
     <br>
-  
-    <!-- Copyright -->
     <div class="container-fluid">Project-2-Group-6 &copy; 2019</div>
-</footer>
-  
-  
+  </footer>
+
   <!-- Post script -->
   <script src="js/Posts.js"></script>
-  
-</body>
 
+</body>
 </html>
